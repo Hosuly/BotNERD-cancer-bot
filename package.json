@@ -1,0 +1,20 @@
+{
+  "name": "minibitifit-test",
+  "version": "0.0.1",
+  "description": "Địt mẹ chán quá",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Hosuly",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "discord.js": "^14.8.0",
+    "fs": "^0.0.1-security",
+    "minecraft-data": "^3.31.0",
+    "minecraft-protocol": "^1.41.1",
+    "mineflayer": "^4.8.1",
+    "vec3": "^0.1.8"
+  }
+}
