@@ -138,3 +138,5 @@ function RadiumBot(bot) {
 }
 
 client.login(token)
+
+// ❤️ I love Lucid ❤️ //
