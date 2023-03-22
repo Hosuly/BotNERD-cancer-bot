@@ -10,12 +10,17 @@ let botid = ''
 //Ip Server Minecraft
 var ipsv = ''
 
+//Port Server Minecraft | không cần thiếu nếu server có domain
+var ptsv = ''
+
 //Password Bot Minecraft
 let pswd = ''
 
 //Version Bot Minecraft
 let mcvrsn = ''
 
+// Pin of Bot Minecraft if there's using "Pin Login" Plugin
+let pin = [0, 0, 0, 0]
 
 //Veri Simple Code Lmfao
 const mineflayer = require('mineflayer')
@@ -140,3 +145,39 @@ function RadiumBot(bot) {
 client.login(token)
 
 // ❤️ I love Lucid ❤️ //
+
+/* Login Method
+function Authme() {
+    var regis = 'Please, register to this server with thhe command: /register <password> <ConfirmPassword>'
+    var logme = 'Please, login with the command: /login <password>'
+    bot.on('chat', (message) => {
+        if (message === regis) {
+            bot.chat('/register ' + pswd + pswd)
+            bot.chat('/register ' + pswd + pswd)
+            bot.chat('login ' + pswd)
+        }
+        if (message === logme) {
+            bot.chat('/login ' + pswd)
+        }
+    })
+}
+
+
+function PinLog() {
+    bot.on('windowOpen', async (window) => {
+        window.requiresConfirmation = false
+        bot.clickWindow(pin[0], 0, 0)
+        bot.clickWindow(pin[1], 0, 0)
+        bot.clickWindow(pin[2], 0, 0)
+        bot.clickWindow(pin[3], 0, 0)
+    })
+}
+
+function AnvilLog() {
+    bot.on('windowOpen'), async (window) => {
+        window.requiresConfirmation = false
+        bot.openAnvil(anvilBlock).rename(pswd)
+
+    }
+}
+*/
