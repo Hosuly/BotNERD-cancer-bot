@@ -31,6 +31,7 @@ const minecraftData = require('minecraft-data')
 const mcData = minecraftData('1.19.2')
 require('minecraft-protocol')
 const Vec3 = require('vec3').Vec3
+
 let rdint = Math.floor(Math.random() * 10) + 3
 var rdign = crypto.randomBytes(rdint).toString('base64url').replace(/[^\w ]/g, '')
 var rdign2 = crypto.randomBytes(rdint).toString('base64url').replace(/[^\w ]/g, '')
@@ -60,7 +61,9 @@ function RadiumBot(bot) {
             .setTimestamp()
         client.channels.cache.get(channelid).send({ embeds: [Joined]})
         console.log(`${chalk.white.bgGreenBright('Bot Joined')}\n ${bot.username}`)
-        bot.chat('login ' + pswd)
+        bot.chat(`/register ${pswd} ${pswd}`)
+        bot.chat(`/register ${pswd} ${pswd}`)
+        bot.chat(`/login ${pswd}`)
     })
 
     client.once(Events.ClientReady, c => {
