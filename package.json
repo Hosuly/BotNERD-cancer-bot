@@ -16,6 +16,7 @@
     "minecraft-data": "^3.31.0",
     "minecraft-protocol": "^1.41.1",
     "mineflayer": "^4.8.1",
+    "mineflayer-tps": "^1.0.1",
     "vec3": "^0.1.8"
   }
 }

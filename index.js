@@ -1,23 +1,23 @@
 //Token Bot Discord
-let token = ''
+let token = 'OTY0NTUzOTE5Mjg2MDg3NzIw.G8tdiz.f_MfZxJz4DAlmPMfmX_XGpBrWaOaPQ-ysOIC7k'
 
 //Id Channel Discord
-let channelid = ''
+let channelid = '1087259966798307328'
 
 //Id Bot Discord
-let botid = ''
+let botid = '964553919286087720'
 
 //Ip Server Minecraft
-var ipsv = ''
+var ipsv = 'testbotfuYO.aternos.me'
 
 //Port Server Minecraft | không cần thiếu nếu server có domain
 var ptsv = ''
 
 //Password Bot Minecraft
-let pswd = ''
+let pswd = '123789abcxyz'
 
 //Version Bot Minecraft
-let mcvrsn = ''
+let mcvrsn = '1.19.2'
 
 // Pin of Bot Minecraft if there's using "Pin Login" Plugin
 let pin = [0, 0, 0, 0]
@@ -31,6 +31,7 @@ const minecraftData = require('minecraft-data')
 const mcData = minecraftData('1.19.2')
 require('minecraft-protocol')
 const Vec3 = require('vec3').Vec3
+const tpsPlugin = require('mineflayer-tps')(mineflayer)
 
 let rdint = Math.floor(Math.random() * 10) + 3
 var rdign = crypto.randomBytes(rdint).toString('base64url').replace(/[^\w ]/g, '')
@@ -47,7 +48,8 @@ var ctrbot1 = {
 }
 
 const bot = mineflayer.createBot(ctrbot1)
-bot.commands = new Map();
+bot.commands = new Map()
+bot.loadPlugin(tpsPlugin)
 RadiumBot(bot)
 
 function RadiumBot(bot) {
@@ -67,7 +69,7 @@ function RadiumBot(bot) {
     })
 
     client.once(Events.ClientReady, c => {
-        console.log(`Ready! Logged in as ${c.user.tag}`);
+        console.log(`Ready! Logged in as ${c.user.tag}`)
     })
 
     bot.on('end', (reason) => {
@@ -109,7 +111,9 @@ function RadiumBot(bot) {
             .setAuthor({ name: 'Code by Hosuly', iconURL: 'https://avatars.githubusercontent.com/u/74451306?v=4', url: 'https://github.com/Hosuly' })
             .setTimestamp()
         await client.channels.cache.get(channelid).send({ embeds: [Livechat] })
-        // await client.channels.cache.get(channelid).send(`${username}: ${msg}`)
+        if (msg === ':tps') {
+            bot.chat(`Server Tps: ${bot.getTps()}`)
+        }
     })
 
     client.on('messageCreate', async (client) => {
@@ -119,6 +123,18 @@ function RadiumBot(bot) {
         await client.react('🤑')
         await bot.chat(`[${client.author.tag}] ${client.content} | Code by Hosuly |`)
         console.log(`[${client.author.tag}] ${client.content} | Code by Hosuly |`)
+    })
+
+    client.on('messageCreate', async (message) => {
+        if (!message.guild) return
+        if (message.author.bot || message.author.id === botid) return
+        if (message.channel.id !== channelid) return
+        if (message.content === ':tps') {
+            client.channels.cache.get(channelid).send(`Server Tps: ${bot.getTps()}`)
+        }
+        if (message.content === ':ping') {
+            client.channels.cache.get(channelid).send(`Host Ping: ${client.ws.ping}ms`)
+        }
     })
 
     bot.on('error', console.log)
