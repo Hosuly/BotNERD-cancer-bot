@@ -41,7 +41,8 @@ client.commands = new Collection()
 var ctrbot1 = {
     host: ipsv,
     username: rdign,
-    version: mcvrsn
+    version: mcvrsn,
+    port: ptsv
 }
 
 const bot = mineflayer.createBot(ctrbot1)
@@ -58,7 +59,7 @@ function RadiumBot(bot) {
             .setAuthor({ name: 'Code by Hosuly', iconURL: 'https://avatars.githubusercontent.com/u/74451306?v=4', url: 'https://github.com/Hosuly' })
             .setTimestamp()
         client.channels.cache.get(channelid).send({ embeds: [Joined]})
-        console.log(chalk.white.bgGreenBright('Bot Joined') + '\n' + bot.username)
+        console.log(`${chalk.white.bgGreenBright('Bot Joined')}\n ${bot.username}`)
         bot.chat('login ' + pswd)
     })
 
@@ -126,7 +127,8 @@ function RadiumBot(bot) {
         var ctrbot3 = {
             host: ipsv,
             username: rdign3,
-            version: mcvrsn
+            version: mcvrsn,
+            port: ptsv
         }         
            
         bot = mineflayer.createBot(ctrbot3)
@@ -138,7 +140,7 @@ function RadiumBot(bot) {
             .setAuthor({ name: 'Code by Hosuly', iconURL: 'https://avatars.githubusercontent.com/u/74451306?v=4', url: 'https://github.com/Hosuly' })
             .setTimestamp()
         client.channels.cache.get(channelid).send({ embeds: [Reconnected] })
-        console.log(chalk.white.bgGreenBright('Reconnect Succes') + '\n' + bot.username)
+        console.log(`${chalk.white.bgGreenBright('Reconnect Succes')}\n ${bot.username}`)
     }
 }
 
