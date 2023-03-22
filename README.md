@@ -12,7 +12,7 @@ git clone https://github.com/Hosuly/BotNERD-cancer-bot.git
 ## Or...just click the "<> Code" green button then click "Download ZIP" 
 
 ### Step 2: Open "index.js" config something on the top then save it.
-![alt text](https://github.com/Hosuly/BotNERD-cancer-bot/blob/master/Screenshot%202023-03-22%20214249.png)
+![segs?](https://github.com/Hosuly/BotNERD-cancer-bot/blob/master/Screenshot%202023-03-22%20214249.png)
 
 ### Step 3: Path to the folder after unzip it, then type 
 ```bash
