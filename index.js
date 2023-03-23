@@ -1,23 +1,23 @@
 //Token Bot Discord
-let token = 'OTY0NTUzOTE5Mjg2MDg3NzIw.G8tdiz.f_MfZxJz4DAlmPMfmX_XGpBrWaOaPQ-ysOIC7k'
+let token = ''
 
 //Id Channel Discord
-let channelid = '1087259966798307328'
+let channelid = ''
 
 //Id Bot Discord
-let botid = '964553919286087720'
+let botid = ''
 
 //Ip Server Minecraft
-var ipsv = 'testbotfuYO.aternos.me'
+var ipsv = ''
 
 //Port Server Minecraft | không cần thiếu nếu server có domain
 var ptsv = ''
 
 //Password Bot Minecraft
-let pswd = '123789abcxyz'
+let pswd = ''
 
 //Version Bot Minecraft
-let mcvrsn = '1.19.2'
+let mcvrsn = ''
 
 // Pin of Bot Minecraft if there's using "Pin Login" Plugin
 let pin = [0, 0, 0, 0]
