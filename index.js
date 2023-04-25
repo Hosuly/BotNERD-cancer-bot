@@ -72,15 +72,15 @@ function RadiumBot(bot) {
         console.log(`Ready! Logged in as ${c.user.tag}`)
     })
 
-    bot.on('end', (reason) => {
+    bot.on('kicked', (kick, reason) => {
         const Disconnected = new EmbedBuilder()
             .setTitle('Disconnected💀')
-            .setDescription('Bot disconnected by ' + reason)
+            .setDescription('Bot disconnected by ' + kick)
             .setColor('DarkRed')
             .setAuthor({ name: 'Code by Hosuly', iconURL: 'https://avatars.githubusercontent.com/u/74451306?v=4', url: 'https://github.com/Hosuly' })
             .setTimestamp()
         client.channels.cache.get(channelid).send({ embeds: [Disconnected]})
-        console.log('Bot disconnected by ' + reason.toString())
+        console.log('Bot disconnected by ' + kick.toString())
         if (reason === reason || reason === null) {
             setTimeout(Reload, 100)
             const Reconnect = new EmbedBuilder()
